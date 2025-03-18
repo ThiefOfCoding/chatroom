@@ -1,0 +1,191 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(https://xatimg.com/image/WzwNTGw4hSF8.gif); /* Substitua pela URL da imagem de fundo */
+  background-size: cover;  /* Garante que a imagem cubra toda a tela */
+  background-position: center center;  /* Centraliza a imagem */
+  background-attachment: fixed;  /* Mantém a imagem fixa enquanto rola */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Password Entry */
+.password-container {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6); /* Fundo branco com leve transparência */
+  padding: 40px 30px;
+  border-radius: 15px; /* Bordas mais arredondadas */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+  width: 100%;
+  max-width: 400px; /* Limita a largura */
+  animation: fadeIn 0.5s ease-in-out, floatAnimation 3s ease-in-out infinite; /* Adiciona animação de flutuação */
+}
+
+/* Animação para o aparecimento suave da caixa */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação de flutuação (float) */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0); /* Início sem movimento */
+  }
+  50% {
+    transform: translateY(-10px); /* Move para cima */
+  }
+  100% {
+    transform: translateY(0); /* Retorna ao estado inicial */
+  }
+}
+
+.password-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Estilo do campo de senha */
+.password-container input {
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 16px;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease; /* Transição suave para foco */
+}
+
+/* Efeito de foco no campo de entrada */
+.password-container input:focus {
+  border-color: #0078D4; /* Cor da borda ao focar */
+  background-color: #fff;
+  outline: none; /* Remove a borda padrão do navegador */
+  box-shadow: 0 0 10px rgba(0, 120, 212, 0.3); /* Sombra suave ao focar */
+}
+
+/* Botão de desbloqueio */
+.password-container button {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #0078D4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.password-container button:hover {
+  background-color: #005a8c;
+  transform: translateY(-2px); /* Leve movimento de "levitação" ao passar o mouse */
+}
+
+.password-container button:active {
+  transform: translateY(1px); /* Efeito de pressionar */
+}
+
+/* Mensagem de erro */
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Image Gallery */
+.image-gallery {
+  width: 100%;
+  max-width: 900px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  animation: fadeInGallery 1s ease-in-out; /* Animação para a galeria aparecer */
+}
+
+@keyframes fadeInGallery {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.gallery-images img {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: popIn 1.5s ease-out forwards; /* Pop-in effect */
+  transform: scale(0.8); /* Começa um pouco menor */
+}
+
+/* Animação mais chamativa para cada imagem */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(45deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05) rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Efeito de hover nas imagens */
+.gallery-images img:hover {
+  transform: scale(1.1) rotate(5deg); /* Aumenta e gira um pouco */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+  .password-container {
+    width: 90%;
+    margin: 20px;
+  }
+
+  .gallery-images img {
+    max-width: 120px;
+    height: 120px;
+  }
+}
